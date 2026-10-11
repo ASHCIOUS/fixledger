@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { validateFileUpload } from "./validate";
-import { MAX_FILE_SIZE_BYTES } from "./constants";
+import { validateFileUpload } from "../server/uploads/validate";
+import { MAX_FILE_SIZE_BYTES } from "../server/uploads/constants";
 
 describe("validate file upload", () => {
   it("accepts valid file", () => {
