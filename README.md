@@ -1,54 +1,42 @@
 # FixLedger
 
 FixLedger is a maintenance coordination SaaS for small property managers.
-It keeps each repair request, assignment, update, and completion record
-together.
+It keeps each repair request, assignment, update, and completion record together.
 
-## Product focus
+## Getting Started
 
-Help a manager move a maintenance request from tenant submission to
-documented completion. FixLedger is not a complete property-management
-suite and does not make legal, safety, or repair-quality determinations.
+### Prerequisites
+- Node.js 20+ and npm
+- PostgreSQL 14+ (local or cloud)
+- (Optional) Docker for local Postgres
 
-## Initial customer hypothesis
+### Setup
+1. Clone the repository
+2. Copy .env.example to .env and fill DATABASE_URL and DIRECT_URL
+3. Install dependencies: npm install
+4. Generate Prisma client: npm run generate
+5. Run migrations: npm run migrate
+6. Seed data: npm run db:seed (if available)
+7. Start dev server: npm run dev
 
-Independent property managers and small management companies. A possible
-initial target is managers responsible for roughly 20–200 units. Validate
-the customer profile and unit range with interviews before treating them
-as settled.
-
-## MVP workflow
-
-1. A tenant submits a request for their unit.
-2. A manager reviews it and assigns staff or a vendor.
-3. The assignee records scheduling and progress updates.
-4. The tenant receives appropriate status updates.
-5. The manager records completion notes and attachments.
-6. Authorized users can find the request history later.
-
-## Proposed starting stack
-
-- Next.js and TypeScript
-- PostgreSQL, with Supabase as the initial database, authentication, and
-  private file-storage option
-- Transactional email provider behind an application-level interface
-- Vitest for unit tests and Playwright for end-to-end tests
-
-Review `docs/ARCHITECTURE.md` before changing these choices.
+### Available Scripts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run linter
+- `npm run typecheck` - Run TypeScript checks
+- `npm run test` - Run unit tests
+- `npm run test:e2e` - Run end-to-end tests
+- `npm run migrate` - Run Prisma migrations
+- `npm run migrate:deploy` - Deploy migrations
+- `npm run db:studio` - Open Prisma Studio
 
 ## Documentation
-
-- `docs/PRD.md` — product requirements and MVP boundaries
-- `docs/UX_FLOWS.md` — user journeys and screen behavior
-- `docs/ARCHITECTURE.md` — application structure and technical choices
-- `docs/DATA_MODEL.md` — entities and relationships
-- `docs/SECURITY.md` — security and access-control requirements
-- `docs/TEST_PLAN.md` — required test coverage
-- `docs/BUILD_PLAN.md` — implementation milestones
-- `AGENTS.md` — working rules for coding agents
-
-## Development
-
-Inspect the repository and existing package scripts before making changes.
-Document the actual setup and test commands here once the app is scaffolded.
-Never commit credentials, production data, or real tenant information.
+- `docs/PRD.md` - Product requirements
+- `docs/UX_FLOWS.md` - User flows
+- `docs/ARCHITECTURE.md` - Technical architecture
+- `docs/DATA_MODEL.md` - Data model
+- `docs/SECURITY.md` - Security requirements
+- `docs/TEST_PLAN.md` - Test plan
+- `docs/BUILD_PLAN.md` - Build milestones
+- `AGENTS.md` - Coding agent instructions
