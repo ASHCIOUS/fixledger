@@ -1,4 +1,4 @@
-﻿node_modules
+node_modules
 .next
 .env
 .env.local
@@ -6,4 +6,8 @@
 .DS_Store
 coverage
 dist
+out
+tsconfig.tsbuildinfo
+playwright-report
+test-results
 /generated/prisma
